@@ -1,4 +1,4 @@
-#include "ClassA.h"
+#include <ClassA.h>
 
 ClassA::ClassA() : m_n(0) {}
 ClassA ::~ClassA()

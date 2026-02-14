@@ -1,5 +1,5 @@
 #pragma once
-#include "ClassB.h"
+#include <ClassB.h>
 class ClassB;
 class ClassA
 {
