@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "ClassB.h"
 
 ClassB::ClassB() : m_x(0) {}
