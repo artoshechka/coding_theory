@@ -4,12 +4,12 @@
 
 ### 1. **coding_theory > Task_1**- Директория для первого самостоятельно задания от 13.03.2026
 
-Сборка проекта производится следующим образом:
+Сборка проекта производится следующим образом (вместо * - порядковый номер примера):
 ```console
-cd Task_1 && mkdir -p build && cd build
+cd Task_1 && cd example_* && mkdir -p build && cd build
 cmake .. && cmake --build .
 ```
 Для запуска введите в консоль:
 ```console
-./task_1_project
+./task_1_*_project
 ```
