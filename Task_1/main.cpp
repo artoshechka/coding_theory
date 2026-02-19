@@ -16,8 +16,10 @@ int main()
 {
     const auto &classObjA = std::make_shared<ClassA>();
 
+    const size_t classObjASize = 5;
+
     int idx = 0;
-    for (size_t partValue = 0; classObjA->getN() < 100; ++idx, ++partValue)
+    for (size_t partValue = 0; classObjA->getN() < classObjASize; ++idx, ++partValue)
     {
 
         AddAndCheckPart(classObjA, partValue);
@@ -34,7 +36,25 @@ int main()
     }
 
     const auto parts = classObjA->getB(idx);
-    
+    for (int i = 0; i < idx; ++i)
+    {
+        const int value = parts[i]->getX();
+
+        std::cout << "\nPart index: " << i
+                  << "\ngetX(): " << value
+                  << "\nverify(" << value << "): "
+                  << (parts[i]->verify(value) ? "true" : "false")
+                  << std::endl;
+
+        ClassB temp;
+        temp = *parts[i]; // проверка operator=
+
+        std::cout << "operator== : "
+                  << ((*parts[i] == temp) ? "true" : "false")
+                  << "\noperator!= : "
+                  << ((*parts[i] != temp) ? "true" : "false")
+                  << std::endl;
+    }
 
     return 0;
 }
