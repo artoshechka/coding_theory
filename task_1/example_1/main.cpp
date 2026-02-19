@@ -3,13 +3,16 @@
 #include <iostream>
 #include <memory>
 
-/// @brief Вставляет и часть и фиксирует сообщение об успехе операции
-/// @param[in] classObj указатель на объект класса для добавления
-/// @param[in] part часть для добавления
-void AddAndCheckPart(const std::shared_ptr<ClassA> &classObj, const int &part)
+namespace
 {
-    const bool isSuccess = classObj->add(part);
-    std::cout << "Is success: " << (isSuccess ? "true" : "false") << "\nIndex: " << (isSuccess ? (classObj->find(part)) : -1) << std::endl;
+    /// @brief Вставляет и часть и фиксирует сообщение об успехе операции
+    /// @param[in] classObj указатель на объект класса для добавления
+    /// @param[in] part часть для добавления
+    void AddAndCheckPart(const std::shared_ptr<ClassA> &classObj, const int &part)
+    {
+        const bool isSuccess = classObj->add(part);
+        std::cout << "Is success: " << (isSuccess ? "true" : "false") << "\nIndex: " << (isSuccess ? (classObj->find(part)) : -1) << std::endl;
+    }
 }
 
 int main()
